@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Uhmegle Live Map Locator",
+  "version": "1.1",
+  "description": "Displays peer location coordinates and interactive map overlay via WebRTC",
+  "icons": {
+    "128": "icon128.png"
+  },
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.uhmegle.com/*",
+        "*://uhmegle.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_start",
+      "world": "MAIN"
+    }
+  ]
+}
